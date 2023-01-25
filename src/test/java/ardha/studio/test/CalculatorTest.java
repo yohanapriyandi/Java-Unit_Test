@@ -12,4 +12,17 @@ public class CalculatorTest {
         var result = calculator.add(15,56);
         assertEquals(71, result);
     }
+
+    @Test
+    public void testDivideSuccess(){
+        var result = calculator.divide(100, 10);
+        assertEquals(10, result);
+    }
+
+    @Test
+    public void testDivideFailed() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            calculator.divide(10, 0);
+        });
+    }
 }
